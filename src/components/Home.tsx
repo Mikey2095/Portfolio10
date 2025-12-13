@@ -164,7 +164,20 @@ function FooterText() {
 
 function Frame1() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(49,49,49,0)] min-h-[50vh] md:h-[702px] items-center px-[20px] md:px-0 py-[55px] relative shrink-0 to-[#000000] w-full z-10">
+    <div className="content-stretch flex flex-col min-h-[50vh] md:h-[702px] items-center px-[20px] md:px-0 py-[55px] relative shrink-0 w-full z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          poster="https://images.unsplash.com/photo-1640346876473-f76a73c71539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjU2MDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          className="h-full w-full object-cover"
+        >
+          <source src="/assets/video/hero-background.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(49,49,49,0)] to-[#000000]" />
+      </div>
       <h1 className="font-['ED_Manteca',sans-serif] leading-[1.1] min-w-full not-italic relative shrink-0 text-[40px] md:text-[80px] lg:text-[134px] text-center text-white tracking-[-2px] md:tracking-[-6.7px] uppercase w-[min-content] select-none">DESIGN SYSTEM ARCHITECT</h1>
       <FooterText />
     </div>
