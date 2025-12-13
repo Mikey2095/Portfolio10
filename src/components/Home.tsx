@@ -65,7 +65,7 @@ function Header() {
   return (
     <header className="bg-[rgba(0,0,0,0.71)] relative shrink-0 w-full z-10" data-name="Header 1">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center justify-between px-[20px] md:px-[64px] py-[16px] md:py-[24px] relative w-full">
+        <div className="content-stretch flex items-center justify-between px-[20px] md:px-[64px] py-[16px] md:py-[24px] relative w-full bg-[rgb(0,0,0)]">
           <LogoContain />
           <Nav />
         </div>
@@ -174,7 +174,7 @@ function Frame1() {
           poster="https://images.unsplash.com/photo-1640346876473-f76a73c71539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjU2MDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           className="h-full w-full object-cover"
         >
-          <source src="/assets/video/hero-background.mp4" type="video/mp4" />
+          <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/public/assets/video/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(49,49,49,0)] to-[#000000]" />
       </div>
@@ -341,13 +341,6 @@ function StatsSection() {
 export function Home() {
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative min-h-screen w-full overflow-x-hidden" data-name="Desktop">
-      <div aria-hidden="true" className="absolute h-[835px] left-0 top-0 w-full z-0 overflow-hidden" data-name="Video Background" role="presentation">
-        <video aria-hidden="true" autoPlay className="absolute w-full h-full object-cover scale-110" muted loop playsInline>
-          <source src="/assets/video/hero-background.mp4" />
-          <source src="/_videos/v1/9fbab25563d4ef676c4ed6e8027ad521968a871c" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
       <Header />
       <LogoPrimary1 />
       <Frame1 />

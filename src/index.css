@@ -2,9 +2,6 @@
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-rotate-x: rotateX(0);
       --tw-rotate-y: rotateY(0);
       --tw-rotate-z: rotateZ(0);
@@ -25,6 +22,9 @@
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-duration: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
     }
   }
 }
@@ -454,10 +454,6 @@
     z-index: calc(10 * -1);
   }
 
-  .z-0 {
-    z-index: 0;
-  }
-
   .z-10 {
     z-index: 10;
   }
@@ -607,10 +603,6 @@
     height: 500px;
   }
 
-  .h-\[835px\] {
-    height: 835px;
-  }
-
   .h-auto {
     height: auto;
   }
@@ -729,13 +721,6 @@
 
   .basis-0 {
     flex-basis: calc(var(--spacing) * 0);
-  }
-
-  .scale-110 {
-    --tw-scale-x: 110%;
-    --tw-scale-y: 110%;
-    --tw-scale-z: 110%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
 
   .transform {
@@ -963,22 +948,16 @@
     }
   }
 
+  .bg-\[rgb\(0\,0\,0\)\] {
+    background-color: #000;
+  }
+
   .bg-\[rgba\(0\,0\,0\,0\.71\)\] {
     background-color: #000000b5;
   }
 
   .bg-black {
     background-color: var(--color-black);
-  }
-
-  .bg-black\/40 {
-    background-color: #0006;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-black\/40 {
-      background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
-    }
   }
 
   .bg-gray-50 {
@@ -1208,10 +1187,6 @@
 
   .font-\[\'Instrument_Sans\'\] {
     font-family: Instrument Sans;
-  }
-
-  .font-\[\'Inter\'\,sans-serif\] {
-    font-family: Inter, sans-serif;
   }
 
   .text-2xl {
@@ -2334,24 +2309,6 @@ html {
   font-size: var(--font-size);
 }
 
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -2463,4 +2420,22 @@ html {
 @property --tw-duration {
   syntax: "*";
   inherits: false
+}
+
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }

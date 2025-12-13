@@ -39,7 +39,7 @@ function LogoPrimary() {
 
 function Nav() {
   return (
-    <nav className="flex font-['Inter',sans-serif] font-medium gap-[32px] items-center text-[16px] text-white tracking-[-0.08px]">
+    <nav className="flex font-['Instrument_Sans',sans-serif] font-medium gap-[32px] items-center text-[16px] text-white tracking-[-0.08px]">
       <Link to="/" className="hover:opacity-70 transition-opacity">Work</Link>
       <Link to="/about" className="hover:opacity-70 transition-opacity text-gray-300">About</Link>
       <Link to="#" className="hover:opacity-70 transition-opacity">Contact</Link>
@@ -92,7 +92,7 @@ function AboutSection() {
 
 function EducationRow({ code, title, year }: { code: string; title: string; year: string }) {
   return (
-    <div className="flex flex-col md:flex-row font-['Inter',sans-serif] font-medium items-start md:items-center justify-between text-[16px] md:text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] border-b border-gray-200 py-[24px] gap-2 md:gap-0">
+    <div className="flex flex-col md:flex-row font-['Instrument_Sans',sans-serif] font-medium items-start md:items-center justify-between text-[16px] md:text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] border-b border-gray-200 py-[24px] gap-2 md:gap-0">
       <div className="w-full md:w-24 shrink-0 font-bold md:font-medium">{code}</div>
       <div className="grow">{title}</div>
       <div className="shrink-0 text-gray-400 md:text-inherit">{year}</div>
@@ -117,7 +117,7 @@ function EducationSection() {
 
 function ExperienceRow({ role, company, year }: { role: string; company: string | React.ReactNode; year: string }) {
   return (
-    <div className="flex flex-col md:flex-row font-['Inter',sans-serif] font-medium items-start md:items-center justify-between text-[16px] md:text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] border-b border-gray-200 py-[24px] gap-2 md:gap-0">
+    <div className="flex flex-col md:flex-row font-['Instrument_Sans',sans-serif] font-medium items-start md:items-center justify-between text-[16px] md:text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] border-b border-gray-200 py-[24px] gap-2 md:gap-0">
       <div className="w-full md:w-[300px] shrink-0 font-bold md:font-medium">{role}</div>
       <div className="w-full md:w-[300px] shrink-0 md:text-center text-gray-600">{company}</div>
       <div className="w-full md:w-[300px] shrink-0 md:text-right text-gray-400 md:text-inherit">{year}</div>
