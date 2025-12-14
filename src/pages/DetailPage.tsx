@@ -262,36 +262,7 @@ export function DetailPage({ type }: { type: "case-study" | "project" }) {
               </div>
             )}
 
-            {/* Scientific Layer (Psychology) - Moved to Sidebar */}
-            <div className="rounded-xl bg-black p-6 text-white">
-              <div className="mb-6 flex items-center gap-3 border-b border-white/20 pb-4">
-                <Brain className="h-6 w-6 text-white" />
-                <h2 className="font-['ED_Manteca',sans-serif] text-2xl uppercase leading-none">
-                  The Psychology
-                </h2>
-              </div>
-              <div className="grid gap-6">
-                <div>
-                  <h3 className="mb-2 font-['Instrument_Sans'] text-xs font-bold uppercase tracking-widest text-gray-400">
-                    Core Principle
-                  </h3>
-                  <p className="font-['Instrument_Sans'] text-xl font-medium leading-tight text-white">
-                    {formatText(item.psychology.principle)}
-                  </p>
-                   <p className="mt-2 font-['Instrument_Sans'] text-sm italic text-gray-400">
-                    "{formatText(item.psychology.definition)}"
-                  </p>
-                </div>
-                <div>
-                  <h3 className="mb-3 font-['Instrument_Sans'] text-xs font-bold uppercase tracking-widest text-gray-400">
-                    Applied Architecture
-                  </h3>
-                  <p className="font-['Instrument_Sans'] text-base font-light leading-relaxed text-gray-200">
-                    {formatText(item.psychology.application)}
-                  </p>
-                </div>
-              </div>
-            </div>
+
           </aside>
 
           {/* Main Content */}
@@ -317,6 +288,39 @@ export function DetailPage({ type }: { type: "case-study" | "project" }) {
                   </div>
                   <ImageGrid images={item.brief.images} />
                 </section>
+
+                {/* Scientific Layer (Psychology) */}
+                {item.psychology && (
+                  <section className="mb-12 md:mb-20 rounded-xl bg-black p-6 text-white">
+                    <div className="mb-6 flex items-center gap-3 border-b border-white/20 pb-4">
+                      <Brain className="h-6 w-6 text-white" />
+                      <h2 className="font-['ED_Manteca',sans-serif] text-2xl uppercase leading-none">
+                        The Psychology
+                      </h2>
+                    </div>
+                    <div className="grid gap-6">
+                      <div>
+                        <h3 className="mb-2 font-['Instrument_Sans'] text-xs font-bold uppercase tracking-widest text-gray-400">
+                          Core Principle
+                        </h3>
+                        <p className="font-['Instrument_Sans'] text-xl font-medium leading-tight text-white">
+                          {formatText(item.psychology.principle)}
+                        </p>
+                         <p className="mt-2 font-['Instrument_Sans'] text-sm italic text-gray-400">
+                          "{formatText(item.psychology.definition)}"
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="mb-3 font-['Instrument_Sans'] text-xs font-bold uppercase tracking-widest text-gray-400">
+                          Applied Architecture
+                        </h3>
+                        <p className="font-['Instrument_Sans'] text-base font-light leading-relaxed text-gray-200">
+                          {formatText(item.psychology.application)}
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                )}
 
                 {/* 2. Research & Analysis */}
                 {item.research && (

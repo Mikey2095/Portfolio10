@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import svgPaths from "../imports/svg-kkj6a6odoq";
 import { useEffect, useRef } from "react";
 import { WorkSection } from "./WorkSection";
+import { SkillsSection } from "./SkillsSection";
 
 function LogoPrimary() {
   return (
@@ -174,7 +175,7 @@ function Frame1() {
           poster="https://images.unsplash.com/photo-1640346876473-f76a73c71539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjU2MDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           className="h-full w-full object-cover"
         >
-          <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/public/assets/video/hero-background.mp4" type="video/mp4" />
+          <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(49,49,49,0)] to-[#000000]" />
       </div>
@@ -186,11 +187,12 @@ function Frame1() {
 
 function IntroContent() {
   return (
-    <div className="content-stretch flex flex-col items-center px-0 py-[50px] md:py-[108px] relative shrink-0 w-full" data-name="Intro content">
+    <div className="content-stretch flex flex-col items-center gap-[30px] px-0 py-[50px] md:py-[108px] relative shrink-0 w-full" data-name="Intro content">
       <div aria-hidden="true" className="absolute border-[1px_0px] border-black border-solid inset-0 pointer-events-none" />
-      <p className="font-['Instrument_Sans',sans-serif] font-bold leading-none max-w-[820px] relative shrink-0 text-[32px] md:text-[64px] text-black text-center uppercase w-full" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="font-['Instrument_Sans',sans-serif] font-bold leading-none max-w-[1000px] relative shrink-0 text-[32px] md:text-[64px] text-black text-center uppercase w-full" style={{ fontVariationSettings: "'wdth' 100" }}>
         I architect design systems that transform production, collaboration, and decision-making at scale.
       </p>
+      <p>"I make sure everyone knows when to stop, go, and merge—so work moves faster."</p>
     </div>
   );
 }
@@ -317,7 +319,7 @@ function StatsContent() {
   return (
     <div className="relative shrink-0 w-full" data-name="Stats content">
       <div className="size-full">
-        <div className="content-stretch flex flex-col md:flex-row gap-[50px] md:gap-[108px] items-start md:px-[63.8px] py-[0px] relative w-full px-[222px]">
+        <div className="content-stretch flex flex-col md:flex-row gap-[50px] md:gap-[50px] items-start md:px-[63.8px] py-[0px] relative w-full px-0">
           <Frame />
           <StatsContain />
         </div>
@@ -346,6 +348,7 @@ export function Home() {
       <Frame1 />
       <IntroSection />
       <WorkSection />
+      <SkillsSection />
       <StatsSection />
     </div>
   );

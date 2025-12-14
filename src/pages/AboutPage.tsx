@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import svgPaths from "../imports/svg-3ngjiqxtmw";
 
 // Placeholder Images
-const imgPortrait = "https://images.unsplash.com/photo-1752486268262-6ce6b339a8de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-const imgInterests = "https://images.unsplash.com/photo-1735748917428-be035e873f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+const imgPortrait = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/PortraitImage.jpg";
+const imgInterests = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/Interest.jpg";
+
+const videoLinks = [
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4735.mp4",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4472.mov",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4126.mp4",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_3971.mov"
+];
 
 function LogoPrimary() {
   return (
@@ -170,15 +177,18 @@ function InterestsSection() {
 
       {/* Gallery Grid (Video Placeholders) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[4px] h-auto md:h-[465px]">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="relative aspect-video md:aspect-auto h-auto md:h-full rounded-[16px] overflow-hidden bg-gray-900 flex items-center justify-center group">
-             {/* Placeholder for Video */}
-             <div className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-50 group-hover:opacity-100 transition-opacity">
-               <span className="text-4xl mb-2">▶</span>
-               <span className="text-sm font-medium uppercase tracking-widest">Video {i}</span>
-             </div>
-             {/* Simulating video thumbnail look */}
-             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+        {videoLinks.map((videoUrl, index) => (
+          <div key={index} className="relative aspect-video md:aspect-auto h-auto md:h-full rounded-[16px] overflow-hidden bg-gray-900 group">
+             <video 
+               className="w-full h-full object-cover"
+               autoPlay
+               muted
+               loop
+               playsInline
+             >
+               <source src={videoUrl} type={videoUrl.endsWith('.mov') ? "video/quicktime" : "video/mp4"} />
+             </video>
+             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
           </div>
         ))}
       </div>
