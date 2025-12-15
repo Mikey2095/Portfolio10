@@ -1,70 +1,18 @@
 import { Link } from "react-router-dom";
-import svgPaths from "../imports/svg-3ngjiqxtmw";
+import { Header } from "../components/Home";
 
 // Placeholder Images
-const imgPortrait = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/PortraitImage.jpg";
-const imgInterests = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/Interest.jpg";
+const imgPortrait = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/PortraitImage.jpg";
+const imgInterests = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/Interest.jpg";
 
 const videoLinks = [
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4735.mp4",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4472.mov",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_4126.mp4",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/IMG_3971.mov"
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4735.mp4",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4472.mov",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4126.mp4",
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_3971.mov"
 ];
 
-function LogoPrimary() {
-  return (
-    <div className="h-[85.488px] relative shrink-0 w-[306.069px]">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 307 86">
-        <g id="Logo/Primary">
-          <g id="MICHAEL ANGELO TORRES">
-            <path d={svgPaths.p35345b00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p3eec6370} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p27e7ca00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p997a000} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p1e143cc0} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p33a13a00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p18d85cf0} fill="currentColor" className="text-white" />
-            <path d={svgPaths.pc0f7700} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p3b3c8f00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p1cfaf680} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p28184980} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p122d5a00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p1ae9dd00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p26f6db00} fill="currentColor" className="text-white" />
-            <path d={svgPaths.pc65df40} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p3ba5d200} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p1825b880} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p362d7940} fill="currentColor" className="text-white" />
-            <path d={svgPaths.p36336100} fill="currentColor" className="text-white" />
-          </g>
-        </g>
-      </svg>
-    </div>
-  );
-}
 
-function Nav() {
-  return (
-    <nav className="flex font-['Instrument_Sans',sans-serif] font-medium gap-[32px] items-center text-[16px] text-white tracking-[-0.08px]">
-      <Link to="/" className="hover:opacity-70 transition-opacity">Work</Link>
-      <Link to="/about" className="hover:opacity-70 transition-opacity text-gray-300">About</Link>
-      <Link to="#" className="hover:opacity-70 transition-opacity">Contact</Link>
-      <Link to="#" className="hover:opacity-70 transition-opacity">Hire me</Link>
-    </nav>
-  );
-}
-
-function Header() {
-  return (
-    <header className="bg-black flex items-center justify-between px-[20px] md:px-[64px] py-[24px] w-full max-w-[1280px] mx-auto">
-      <Link to="/">
-        <LogoPrimary />
-      </Link>
-      <Nav />
-    </header>
-  );
-}
 
 function AboutText() {
   return (

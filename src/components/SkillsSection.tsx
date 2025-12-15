@@ -58,7 +58,7 @@ export function SkillsSection() {
     >
       <div className="mx-auto w-full max-w-[1440px]">
         <h2 className="mb-[40px] md:mb-[80px] font-['ED_Manteca',sans-serif] text-[40px] md:text-[80px] uppercase leading-[0.9] tracking-[-2px] md:tracking-[-4px]">
-          Capabilities
+          SYSTEM ARCHITECTURE
         </h2>
 
         <div className="flex flex-col border-t border-black">
@@ -71,7 +71,7 @@ export function SkillsSection() {
             </div>
             <div className="md:col-span-5">
               <span className="font-['Instrument_Sans'] text-sm font-bold uppercase tracking-widest text-gray-500">
-                Capabilities
+                System Function
               </span>
             </div>
             <div className="md:col-span-4">

@@ -5,6 +5,7 @@ import { Home } from "./components/Home";
 import { Preloader } from "./components/Preloader";
 import { DetailPage } from "./pages/DetailPage";
 import { AboutPage } from "./pages/AboutPage";
+import { MoreProjectsPage } from "./pages/MoreProjectsPage";
 
 function AnimatedRoutes() {
   const [loading, setLoading] = useState(true);
@@ -66,6 +67,32 @@ function AnimatedRoutes() {
               transition={{ duration: 0.5 }}
             >
               <AboutPage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/more-projects"
+          element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <MoreProjectsPage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/creative-work/:id"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <DetailPage type="creative-work" />
             </motion.div>
           }
         />

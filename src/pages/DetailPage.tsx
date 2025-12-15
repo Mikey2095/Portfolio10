@@ -1,7 +1,8 @@
 import { ArrowLeft, Brain, Microscope, GitBranch, Calendar, Target } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { PortfolioItem, caseStudies, projects } from "../data/portfolio";
+import { PortfolioItem, caseStudies, projects, creativeWorks } from "../data/portfolio";
 import { useEffect } from "react";
+import { Header } from "../components/Home";
 
 function ImageGrid({ images }: { images?: string[] }) {
   if (!images || images.length === 0) return null;
@@ -27,9 +28,9 @@ function formatText(text: string) {
   });
 }
 
-export function DetailPage({ type }: { type: "case-study" | "project" }) {
+export function DetailPage({ type }: { type: "case-study" | "project" | "creative-work" }) {
   const { id } = useParams();
-  const data = type === "case-study" ? caseStudies : projects;
+  const data = type === "case-study" ? caseStudies : type === "project" ? projects : creativeWorks;
   const item = data.find((i) => i.id === id);
 
   useEffect(() => {
@@ -121,12 +122,7 @@ export function DetailPage({ type }: { type: "case-study" | "project" }) {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Navigation */}
-      <nav className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-4 md:px-8 py-4 md:py-6 mix-blend-difference">
-        <Link to="/" className="flex items-center gap-2 text-white hover:opacity-70">
-          <ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />
-          <span className="font-['Instrument_Sans'] text-base md:text-lg font-medium uppercase">Back</span>
-        </Link>
-      </nav>
+      <Header />
 
       {/* Hero */}
       <header className="relative flex min-h-[50vh] md:min-h-[70vh] flex-col justify-end bg-black text-white overflow-hidden">
@@ -142,7 +138,7 @@ export function DetailPage({ type }: { type: "case-study" | "project" }) {
 
         <div className="relative mx-auto w-full max-w-[1440px] px-4 md:px-8 pb-12 md:pb-24 pt-24 md:pt-48">
           <span className="mb-4 md:mb-6 block font-['Instrument_Sans'] text-xs md:text-sm font-medium uppercase tracking-widest text-gray-400">
-            {type === "case-study" ? "Case Study" : "Project"}
+            {type === "case-study" ? "Case Study" : type === "project" ? "Project" : "Creative Work"}
           </span>
           <h1 className="max-w-4xl font-['ED_Manteca',sans-serif] text-4xl md:text-7xl lg:text-9xl uppercase leading-[0.9] tracking-tighter">
             {item.title}

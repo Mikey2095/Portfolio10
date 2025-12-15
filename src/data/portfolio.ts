@@ -62,23 +62,136 @@ export interface PortfolioItem {
   
   tags: string[];
   
-  psychology: {
+  psychology?: {
     principle: string;
     definition: string;
     application: string;
   };
-  ux_research: {
+  ux_research?: {
     method: string;
     hypothesis: string;
     finding: string;
   };
-  system_architecture: {
+  system_architecture?: {
     component_count?: number;
     adoption_percentage: string | number;
     legacy_debt_reduction: string;
     topology: string;
   };
 }
+
+export const creativeWorks: PortfolioItem[] = [
+  {
+    id: "modern-architecture-viz",
+    title: "Modern Architecture Visualization",
+    subtitle: "3D Rendering",
+    summary: "Photorealistic visualization of modern architectural concepts focusing on light and material.",
+    heroImage: "https://images.unsplash.com/photo-1686164748261-33e13eef70b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjAzZCUyMGFyY2hpdGVjdHVyZSUyMHJlbmRlcnxlbnwxfHx8fDE3NjU3Njg0MTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "3D Artist",
+    tools: ["Blender", "Cycles", "Photoshop"],
+    tags: ["3D", "Architecture", "Rendering"],
+  },
+  {
+    id: "blueprint-sketches",
+    title: "Technical Blueprint Sketches",
+    subtitle: "Drafting & Illustration",
+    summary: "Hand-drawn and digitally enhanced technical blueprints exploring structural concepts.",
+    heroImage: "https://images.unsplash.com/photo-1721132537184-5494c01ed87f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50JTIwc2tldGNofGVufDF8fHx8MTc2NTc2ODQyMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Draftsman",
+    tools: ["AutoCAD", "Sketching", "Illustrator"],
+    tags: ["Drafting", "Blueprint", "Technical"],
+  },
+  {
+    id: "geometric-abstract",
+    title: "Geometric Abstractions",
+    subtitle: "Digital Art",
+    summary: "Exploration of pure form and geometry through procedural generation.",
+    heroImage: "https://images.unsplash.com/photo-1743435188586-73f751a36f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwYXJ0fGVufDF8fHx8MTc2NTc2ODQyNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Digital Artist",
+    tools: ["Houdini", "Redshift"],
+    tags: ["Abstract", "Geometry", "3D"],
+  },
+  {
+    id: "isometric-rooms",
+    title: "Isometric Room Design",
+    subtitle: "3D Illustration",
+    summary: "Stylized isometric room designs focusing on color palettes and spatial arrangement.",
+    heroImage: "https://images.unsplash.com/photo-1663063036902-df7d871b39a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpc29tZXRyaWMlMjByb29tJTIwZGVzaWduJTIwM2R8ZW58MXx8fHwxNzY1NzM4MzI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "3D Illustrator",
+    tools: ["Cinema 4D", "Octane"],
+    tags: ["Isometric", "Illustration", "3D"],
+  },
+  {
+    id: "futuristic-city",
+    title: "Futuristic Urban Planning",
+    subtitle: "Concept Art",
+    summary: "Conceptual visualizations of future urban environments and mega-structures.",
+    heroImage: "https://images.unsplash.com/photo-1655624409955-426a25866ab8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwY2l0eSUyMHJlbmRlcnxlbnwxfHx8fDE3NjU3Njg0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Concept Artist",
+    tools: ["Unreal Engine", "Photoshop"],
+    tags: ["Concept Art", "Sci-Fi", "Environment"],
+  },
+  {
+    id: "minimalist-product",
+    title: "Minimalist Product Design",
+    subtitle: "Industrial Design",
+    summary: "Clean and functional product design visualizations with a focus on minimalism.",
+    heroImage: "https://images.unsplash.com/photo-1647507653704-bde7f2d6dbf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwcHJvZHVjdCUyMGRlc2lnbiUyMDNkfGVufDF8fHx8MTc2NTc2ODQzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Industrial Designer",
+    tools: ["Rhino", "Keyshot"],
+    tags: ["Product Design", "Minimalism", "Render"],
+  },
+  {
+    id: "architectural-section",
+    title: "Architectural Sections",
+    subtitle: "Technical Drawing",
+    summary: "Detailed cross-sectional drawings revealing the inner workings of architectural spaces.",
+    heroImage: "https://images.unsplash.com/photo-1721244653546-a96caf5689ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwc2VjdGlvbiUyMGRyYXdpbmd8ZW58MXx8fHwxNzY1NzY4NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Architect",
+    tools: ["Revit", "Illustrator"],
+    tags: ["Architecture", "Technical", "Section"],
+  },
+  {
+    id: "digital-wireframe",
+    title: "Digital Structure Wireframes",
+    subtitle: "3D Modeling",
+    summary: "Wireframe renders showcasing the topology and structure of complex 3D models.",
+    heroImage: "https://images.unsplash.com/photo-1616898877076-c544907dc75c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwd2lyZWZyYW1lJTIwc3RydWN0dXJlfGVufDF8fHx8MTc2NTc2ODQ0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "3D Modeler",
+    tools: ["Maya", "Arnold"],
+    tags: ["Wireframe", "3D", "Topology"],
+  },
+  {
+    id: "photoreal-interior",
+    title: "Photorealistic Interiors",
+    subtitle: "Interior Design",
+    summary: "High-fidelity interior rendering for residential and commercial spaces.",
+    heroImage: "https://images.unsplash.com/photo-1643701475345-a89e02714e97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90b3JlYWxpc3RpYyUyMGludGVyaW9yJTIwcmVuZGVyfGVufDF8fHx8MTc2NTc2ODQ0N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Interior Visualizer",
+    tools: ["3ds Max", "V-Ray"],
+    tags: ["Interior", "Visualization", "Photorealism"],
+  },
+  {
+    id: "fluid-shapes",
+    title: "Fluid Organic Shapes",
+    subtitle: "Experimental Art",
+    summary: "Studies in organic forms and fluid dynamics using particle simulations.",
+    heroImage: "https://images.unsplash.com/photo-1644843521796-33876c641aeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGZsdWlkJTIwM2QlMjBzaGFwZXxlbnwxfHx8fDE3NjU3Njg0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    galleryImages: [],
+    role: "Motion Designer",
+    tools: ["X-Particles", "After Effects"],
+    tags: ["Organic", "Fluid", "Simulation"],
+  }
+];
 
 export const caseStudies: PortfolioItem[] = [
   {

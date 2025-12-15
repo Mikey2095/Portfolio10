@@ -47,12 +47,14 @@ function LogoContain() {
 function Nav() {
   return (
     <nav className="content-stretch flex font-['Instrument_Sans',sans-serif] font-semibold gap-[16px] md:gap-[32px] items-center leading-[0] p-0 relative shrink-0 text-[14px] md:text-[20px] text-center text-nowrap text-white tracking-[-0.5px] md:tracking-[-1px]" data-name="Nav">
-      {["Work", "About", "Contact", "Hire me"].map((item) => (
+      {["Work", "About", "More Projects", "Contact", "Hire me"].map((item) => (
         <div key={item} className="flex flex-col justify-center relative shrink-0 cursor-pointer hover:opacity-70 transition-opacity" style={{ fontVariationSettings: "'wdth' 100" }}>
           {item === "Work" ? (
-             <a href="#work" className="leading-none text-nowrap whitespace-pre">{item}</a>
+             <a href="/#work" className="leading-none text-nowrap whitespace-pre">{item}</a>
           ) : item === "About" ? (
              <Link to="/about" className="leading-none text-nowrap whitespace-pre">{item}</Link>
+          ) : item === "More Projects" ? (
+             <Link to="/more-projects" className="leading-none text-nowrap whitespace-pre">{item}</Link>
           ) : (
              <p className="leading-none text-nowrap whitespace-pre">{item}</p>
           )}
@@ -62,7 +64,7 @@ function Nav() {
   );
 }
 
-function Header() {
+export function Header() {
   return (
     <header className="bg-[rgba(0,0,0,0.71)] relative shrink-0 w-full z-10" data-name="Header 1">
       <div className="flex flex-row items-center size-full">
@@ -175,7 +177,7 @@ function Frame1() {
           poster="https://images.unsplash.com/photo-1640346876473-f76a73c71539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjU2MDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           className="h-full w-full object-cover"
         >
-          <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/src/assets/hero-background.mp4" type="video/mp4" />
+          <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(49,49,49,0)] to-[#000000]" />
       </div>
