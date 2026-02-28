@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Preloader } from "./components/Preloader";
 import { DetailPage } from "./pages/DetailPage";
 import { AboutPage } from "./pages/AboutPage";
 import { MoreProjectsPage } from "./pages/MoreProjectsPage";
+import { ContactPage } from "./pages/ContactPage";
 
 function AnimatedRoutes() {
   const [loading, setLoading] = useState(true);
@@ -96,6 +97,21 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
+        <Route
+          path="/contact"
+          element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ContactPage />
+            </motion.div>
+          }
+        />
+
+        <Route path="/hire-me" element={<Navigate to="/contact" replace />} />
       </Routes>
     </AnimatePresence>
   );

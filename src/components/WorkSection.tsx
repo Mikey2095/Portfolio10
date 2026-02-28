@@ -20,6 +20,7 @@ function Card({ item, type }: { item: PortfolioItem; type: "case-study" | "proje
       className="group block border-t border-gray-200 py-12 transition-all hover:bg-gray-50"
     >
       <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+        {/* Title & Metadata */}
         <div className="md:col-span-4">
           <h3 className="font-['Instrument_Sans'] text-2xl font-semibold uppercase tracking-tight md:text-3xl">
             {item.title}
@@ -27,11 +28,31 @@ function Card({ item, type }: { item: PortfolioItem; type: "case-study" | "proje
           <p className="mt-2 font-['Instrument_Sans'] text-sm uppercase tracking-wide text-gray-500">
             {item.subtitle}
           </p>
+          
+          <div className="mt-8 hidden md:block aspect-[4/3] w-full overflow-hidden rounded-sm bg-gray-100">
+             <img 
+               src={item.heroImage} 
+               alt={item.title} 
+               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+             />
+          </div>
         </div>
-        <div className="md:col-span-6">
-          <p className="font-['Instrument_Sans'] text-xl font-medium leading-relaxed text-gray-800">
-            "{formatText(item.summary)}"
-          </p>
+        
+        {/* Summary */}
+        <div className="md:col-span-6 flex flex-col justify-between">
+          <div>
+            <div className="md:hidden aspect-video w-full overflow-hidden rounded-sm bg-gray-100 mb-6">
+               <img 
+                 src={item.heroImage} 
+                 alt={item.title} 
+                 className="h-full w-full object-cover"
+               />
+            </div>
+            <p className="font-['Instrument_Sans'] text-xl font-medium leading-relaxed text-gray-800">
+              "{formatText(item.summary)}"
+            </p>
+          </div>
+          
           <div className="mt-6 flex flex-wrap gap-2">
             {item.tags.map((tag) => (
               <span
@@ -43,7 +64,9 @@ function Card({ item, type }: { item: PortfolioItem; type: "case-study" | "proje
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-end md:col-span-2">
+        
+        {/* Arrow */}
+        <div className="flex items-start justify-end md:col-span-2">
           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black transition-transform duration-300 group-hover:scale-110 group-hover:bg-black group-hover:text-white">
             <ArrowRight className="h-5 w-5" />
           </div>

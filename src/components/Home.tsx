@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import svgPaths from "../imports/svg-kkj6a6odoq";
 import { useEffect, useRef } from "react";
 import { WorkSection } from "./WorkSection";
@@ -39,22 +39,43 @@ function LogoPrimary() {
 function LogoContain() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[356.2005615234375px] relative shrink-0" data-name="Logo contain">
-      <LogoPrimary />
+      <Link to="/" className="block">
+        <LogoPrimary />
+      </Link>
     </div>
   );
 }
 
 function Nav() {
+  const location = useLocation();
+
+  const handleWorkClick = () => {
+    if (location.pathname === "/") {
+      const element = document.getElementById("work");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <nav className="content-stretch flex font-['Instrument_Sans',sans-serif] font-semibold gap-[16px] md:gap-[32px] items-center leading-[0] p-0 relative shrink-0 text-[14px] md:text-[20px] text-center text-nowrap text-white tracking-[-0.5px] md:tracking-[-1px]" data-name="Nav">
-      {["Work", "About", "More Projects", "Contact", "Hire me"].map((item) => (
+      {["Work", "About", "More Projects", "Contact"].map((item) => (
         <div key={item} className="flex flex-col justify-center relative shrink-0 cursor-pointer hover:opacity-70 transition-opacity" style={{ fontVariationSettings: "'wdth' 100" }}>
           {item === "Work" ? (
-             <a href="/#work" className="leading-none text-nowrap whitespace-pre">{item}</a>
+             <Link 
+               to="/#work" 
+               className="leading-none text-nowrap whitespace-pre"
+               onClick={handleWorkClick}
+             >
+               {item}
+             </Link>
           ) : item === "About" ? (
              <Link to="/about" className="leading-none text-nowrap whitespace-pre">{item}</Link>
           ) : item === "More Projects" ? (
              <Link to="/more-projects" className="leading-none text-nowrap whitespace-pre">{item}</Link>
+          ) : item === "Contact" ? (
+             <Link to="/contact" className="leading-none text-nowrap whitespace-pre">{item}</Link>
           ) : (
              <p className="leading-none text-nowrap whitespace-pre">{item}</p>
           )}
@@ -174,7 +195,7 @@ function Frame1() {
           muted 
           loop 
           playsInline 
-          poster="https://images.unsplash.com/photo-1640346876473-f76a73c71539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjU2MDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          poster="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/hero-background-poster.jpg"
           className="h-full w-full object-cover"
         >
           <source src="https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/hero-background.mp4" type="video/mp4" />
@@ -297,14 +318,14 @@ function Stats() {
 
 function TextLink() {
   return (
-    <div className="content-stretch flex font-['Instrument_Sans',sans-serif] font-medium gap-[3px] items-center leading-[1.1] relative shrink-0 text-[#767676] text-[16px] text-nowrap tracking-[-0.48px] whitespace-pre cursor-pointer hover:text-black transition-colors" data-name="Text link">
+    <Link to="/more-projects" className="content-stretch flex font-['Instrument_Sans',sans-serif] font-medium gap-[3px] items-center leading-[1.1] relative shrink-0 text-[#767676] text-[16px] text-nowrap tracking-[-0.48px] whitespace-pre cursor-pointer hover:text-black transition-colors" data-name="Text link">
       <p className="relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         More
       </p>
       <p className="relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         →
       </p>
-    </div>
+    </Link>
   );
 }
 
@@ -343,6 +364,20 @@ function StatsSection() {
 }
 
 export function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#work") {
+      const element = document.getElementById("work");
+      if (element) {
+        // Add a small delay to ensure the component is fully mounted/rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative min-h-screen w-full overflow-x-hidden" data-name="Desktop">
       <Header />

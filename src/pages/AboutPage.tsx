@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { Header } from "../components/Home";
 
 // Placeholder Images
-const imgPortrait = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/PortraitImage.jpg";
-const imgInterests = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/Interest.jpg";
+const imgPortrait = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/PortraitImage.jpg"; // Label: PortraitImage.jpg
+const imgInterests = "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/Interest.jpg"; // Label: Interest.jpg
 
 const videoLinks = [
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4735.mp4",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4472.mov",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4126.mp4",
-  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_3971.mov"
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4735.mp4", // Label: IMG_4735.mp4
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4472.mov", // Label: IMG_4472.mov
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_4126.mp4", // Label: IMG_4126.mp4
+  "https://raw.githubusercontent.com/Mikey2095/Portfolio10/main/public/assets/IMG_3971.mov"  // Label: IMG_3971.mov
 ];
 
 
