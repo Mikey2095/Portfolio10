@@ -121,6 +121,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <AnimatedRoutes />
-    </BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
   );
 }
